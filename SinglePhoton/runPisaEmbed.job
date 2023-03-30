@@ -1,0 +1,13 @@
+Executable      = /bin/sh 
+Universe        = vanilla
+Priority        = +20
+Input           = /dev/null
+GetEnv          = True
+Log		 = /tmp/nivram/log/all_gamma_logout$(Process).log
+Output		  = $ENV(PWD)/out/all_gamma_output$(Process).out
+Error 		  = $ENV(PWD)/error/all_gamma_error$(Process).err		  
+Initialdir      = $ENV(PWD)
+Notification    = Error
+
+Arguments       = runPisaEmbed.csh $(Process)
+Queue 20000
